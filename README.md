@@ -6,7 +6,7 @@ determining which of our leaders feel like putting in the effort to be truthful.
 Backend
 - [X] Install Django REST Framework
 - [X] Create initial Politician/Statement models, methods & migrations
-- [ ] Write tests for models
+- [X] Write tests for models
 - [ ] Write Politician API (GET) and tests
 - [X] Install Redis
 - [X] Configure Celery
