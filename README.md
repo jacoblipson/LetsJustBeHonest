@@ -8,10 +8,12 @@ Backend
 - [X] Create initial Politician/Statement models, methods & migrations
 - [ ] Write tests for models
 - [ ] Write Politician API (GET) and tests
-- [ ] Configure Redis
-- [ ] Configure Celery
-- [ ] Add tasks to scrape new statements from Politifact API
-- [ ] Add util to backfill statement data
+- [X] Install Redis
+- [X] Configure Celery
+- [ ] Configure Supervisord
+- [ ] Write tasks to scrape new statements from Politifact API
+- [ ] Add tasks to a celerybeat schedule
+- [ ] Write utils to backfill statement data
 
 Frontend
 - [ ] Set up React.js
