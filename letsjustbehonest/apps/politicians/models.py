@@ -44,3 +44,12 @@ class Statement(models.Model):
         gif_slugs = ['true', 'mostlytrue', 'halftrue', 'mostlyfalse', 'false',
                      'pantsonfire']
         return url_base.format(gif_slugs[self.ruling])
+
+    def save(self, *args, **kwargs):
+        super(Statement, self).save(*args, **kwargs)
+        statement_scores = [1, 0, -0.5, -1, -2, -3]
+        if self.speaker.honesty_score:
+            self.speaker.honesty_score += statement_scores[self.ruling]
+        else:
+            self.speaker.honesty_score = statement_scores[self.ruling]
+        self.speaker.save()

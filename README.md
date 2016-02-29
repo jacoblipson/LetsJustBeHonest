@@ -16,6 +16,7 @@ Backend
 - [ ] Write utils to backfill statement data
 
 Frontend
+- [X] Set up a base HTML page
 - [ ] Set up React.js
 - [ ] Add React Views (TBA)
 - [ ] Integrate D3.js
@@ -24,3 +25,6 @@ Frontend
 ### Phase 2 Project Tasks
 Backend
 - [ ] Add subjects app and integrate into existing app
+
+Frontend
+- [ ] Reconfigure views as SPA
