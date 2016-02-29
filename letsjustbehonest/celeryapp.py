@@ -13,3 +13,9 @@ app = Celery('letsjustbehonest')
 # pickle the object when using Windows.
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+
+# TODO - follow this guide for running celery via supervisord:
+# http://michal.karzynski.pl/blog/2014/05/18/
+# setting-up-an-asynchronous-task-queue-for-django-using-celery-redis/
+
+# TODO - modify celery to run a celery beat worker
