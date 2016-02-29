@@ -7,7 +7,7 @@ Backend
 - [X] Install Django REST Framework
 - [X] Create initial Politician/Statement models, methods & migrations
 - [X] Write tests for models
-- [ ] Write Politician API (GET) and tests
+- [X] Write Politician API (GET) and tests
 - [X] Install Redis
 - [X] Configure Celery
 - [ ] Configure Supervisord
