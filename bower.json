@@ -1,0 +1,20 @@
+{
+  "name": "Jake Lipson",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jacoblipson/LetsJustBeHonest",
+  "authors": [
+    "Jacob Lipson <jacob_lipson@yahoo.com>"
+  ],
+  "description": "Quantifying all the honesty or lack thereof in politics",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

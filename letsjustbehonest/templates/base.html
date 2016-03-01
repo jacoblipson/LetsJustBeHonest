@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>HELLO WORLD</title>
+    <script type="text/javascript" src="{% static 'react/react.js' %}"></script>
+    <script type="text/javascript" src="{% static 'react/react-dom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
 </head>
 <body>
   <h2>What is this page?</h2>
-  <p>I do not know.</p>
+  <div id="container">I do not know.</div>
 </body>
 </html>
