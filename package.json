@@ -1,0 +1,26 @@
+{
+  "name": "LetsJustBeHonest",
+  "version": "1.0.0",
+  "description": "Quantifying all the honesty or lack thereof in politics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacoblipson/LetsJustBeHonest.git"
+  },
+  "author": "Jacob Lipson <jacob_lipson@yahoo.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacoblipson/LetsJustBeHonest/issues"
+  },
+  "homepage": "https://github.com/jacoblipson/LetsJustBeHonest",
+  "dependencies": {
+    "babel-preset-react": "^6.5.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  }
+}

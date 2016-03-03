@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>HELLO WORLD</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}" />
     <script type="text/javascript" src="{% static 'react/react.js' %}"></script>
     <script type="text/javascript" src="{% static 'react/react-dom.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+    <script type="text/javascript" src="{% static 'react-build/base.js' %}"></script>
 </head>
 <body>
-  <h2>What is this page?</h2>
+  <h2 class="blue">What is this page?</h2>
   <div id="container">I do not know.</div>
 </body>
 </html>
