@@ -16,6 +16,6 @@ var ExampleApplication = React.createClass({
   setInterval(function() {
     ReactDOM.render(
       ExampleApplicationFactory({elapsed: new Date().getTime() - start}),
-      document.getElementById('container')
+      document.getElementById('timer')
     );
   }, 50);

@@ -145,6 +145,7 @@ STATICFILES_FINDERS = (
 
 BOWER_INSTALLED_APPS = (
     'react',
+    'jquery',
 )
 
 # CELERY SETTINGS

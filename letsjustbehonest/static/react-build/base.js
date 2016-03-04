@@ -15,5 +15,5 @@ var ExampleApplicationFactory = React.createFactory(ExampleApplication);
 
 var start = new Date().getTime();
 setInterval(function () {
-  ReactDOM.render(ExampleApplicationFactory({ elapsed: new Date().getTime() - start }), document.getElementById('container'));
+  ReactDOM.render(ExampleApplicationFactory({ elapsed: new Date().getTime() - start }), document.getElementById('timer'));
 }, 50);
