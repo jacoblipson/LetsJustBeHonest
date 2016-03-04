@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = (
     'celery',
     'djangobower',
     'rest_framework',
+    'requests',
 )
 
 LOCAL_APPS = (

@@ -3,13 +3,17 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+class Role(models.Model):
+    label = models.CharField(max_length=50)
+
+
 class Politician(models.Model):
     first_name = models.CharField(max_length=35)
     last_name = models.CharField(max_length=35)
     slug = models.CharField(max_length=50)
     honesty_score = models.IntegerField(null=True, default=None)
     party = models.CharField(max_length=20)
-    roles = models.CharField(max_length=250)
+    roles = models.ManyToManyField(Role)
 
 
 class Statement(models.Model):
@@ -36,7 +40,7 @@ class Statement(models.Model):
     context = models.TextField()
     url = models.TextField()
     statement_date = models.DateField(null=True)
-    ruling_datetime = models.DateTimeField(null=True)
+    ruling_date = models.DateField(null=True)
 
     def get_ruling_gif(self):
         url_base = 'http://static.politifact.com.s3.amazonaws.com:80/' \
