@@ -18,7 +18,7 @@ Backend
 Frontend
 - [X] Set up a base HTML page
 - [X] Set up React.js
-- [ ] Add Gulp and SASS
+- [X] Add Gulp and SASS
 - [ ] Add React Views (TBA)
 - [ ] Integrate D3.js
 
