@@ -1,21 +1,47 @@
-var ExampleApplication = React.createClass({
-    render: function() {
-      var elapsed = Math.round(this.props.elapsed  / 100);
-      var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
-      var message =
-        'React has been successfully running for ' + seconds + ' seconds.';
+var data = [
+  {id: 1, first_name: "Pete", text: "This is one comment"},
+  {id: 2, first_name: "Jordan", text: "This is *another* comment"}
+];
 
-      return React.DOM.p(null, message);
-    }
-  });
+var Politician = React.createClass({
+  render: function() {
+    return (<div>Name: {this.props.first_name}</div>);
+  }
+});
 
-  // Call React.createFactory instead of directly call ExampleApplication({...}) in React.render
-  var ExampleApplicationFactory = React.createFactory(ExampleApplication);
+var PoliticiansList = React.createClass({
+  getInitialState: function() {
+      return {data: []};
+  },
+  componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  render: function() {
+    var politicianListings = this.state.data.map(function(politician) {
+        return (
+          <Politician first_name={politician.first_name} />
+        );
+      });
+    return (<div className="politiciansListing">{politicianListings}</div>);
+  }
+});
 
-  var start = new Date().getTime();
-  setInterval(function() {
-    ReactDOM.render(
-      ExampleApplicationFactory({elapsed: new Date().getTime() - start}),
-      document.getElementById('timer')
+var App = React.createClass({
+  render: function() {
+    return(
+      <PoliticiansList url='/api/politicians/list/' />
     );
-  }, 50);
+  }
+});
+
+ReactDOM.render(<App />, document.getElementById('app'));

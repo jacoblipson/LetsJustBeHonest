@@ -5824,3 +5824,11 @@ button.close {
 
 .blue {
   color: blue; }
+
+body {
+  padding-top: 70px; }
+
+.gradient-text-blue-red {
+  background: -webkit-linear-gradient(#00AEF3, #dddddd, #E71B23);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
