@@ -23,6 +23,9 @@ class Statement(models.Model):
     MOSTLY_FALSE = 3
     FALSE = 4
     PANTS_ON_FIRE = 5
+    NO_FLIP = 6
+    HALF_FLIP = 7
+    FULL_FLOP = 8
 
     RULING_CHOICES = (
         (TRUE, 'True'),
@@ -31,6 +34,9 @@ class Statement(models.Model):
         (MOSTLY_FALSE, 'Mostly False'),
         (FALSE, 'False'),
         (PANTS_ON_FIRE, 'Pants on Fire'),
+        (NO_FLIP, 'No Flip'),
+        (HALF_FLIP, 'Half Flip'),
+        (FULL_FLOP, 'Full Flop'),
     )
 
     speaker = models.ForeignKey(Politician, related_name='statements')
@@ -46,12 +52,12 @@ class Statement(models.Model):
         url_base = 'http://static.politifact.com.s3.amazonaws.com:80/' \
             'rulings%2Ftom-{0}.gif'
         gif_slugs = ['true', 'mostlytrue', 'halftrue', 'mostlyfalse', 'false',
-                     'pantsonfire']
+                     'pantsonfire', 'noflip', 'halfflip', 'fullflop']
         return url_base.format(gif_slugs[self.ruling])
 
     def save(self, *args, **kwargs):
         super(Statement, self).save(*args, **kwargs)
-        statement_scores = [1, 0, -0.5, -1, -2, -3]
+        statement_scores = [1, 0, -0.5, -1, -2, -3, 0.5, -0.5, -2]
         if self.speaker.honesty_score:
             self.speaker.honesty_score += statement_scores[self.ruling]
         else:

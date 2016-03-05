@@ -1,20 +1,20 @@
-var data = [{ id: 1, first_name: "Pete", text: "This is one comment" }, { id: 2, first_name: "Jordan", text: "This is *another* comment" }];
-
 var Politician = React.createClass({
-  displayName: "Politician",
+  displayName: 'Politician',
 
   render: function () {
     return React.createElement(
-      "div",
+      'div',
       null,
-      "Name: ",
-      this.props.first_name
+      'Name: ',
+      this.props.first_name,
+      ', HonestyScore: ',
+      this.props.honesty_score
     );
   }
 });
 
 var PoliticiansList = React.createClass({
-  displayName: "PoliticiansList",
+  displayName: 'PoliticiansList',
 
   getInitialState: function () {
     return { data: [] };
@@ -33,21 +33,21 @@ var PoliticiansList = React.createClass({
   },
   render: function () {
     var politicianListings = this.state.data.map(function (politician) {
-      return React.createElement(Politician, { first_name: politician.first_name });
+      return React.createElement(Politician, { first_name: politician.first_name, honesty_score: politician.honesty_score });
     });
     return React.createElement(
-      "div",
-      { className: "politiciansListing" },
+      'div',
+      { className: 'politiciansListing' },
       politicianListings
     );
   }
 });
 
 var App = React.createClass({
-  displayName: "App",
+  displayName: 'App',
 
   render: function () {
-    return React.createElement(PoliticiansList, { url: "/api/politicians/list/" });
+    return React.createElement(PoliticiansList, { url: '/api/politicians/list/' });
   }
 });
 

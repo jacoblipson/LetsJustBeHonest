@@ -1,11 +1,6 @@
-var data = [
-  {id: 1, first_name: "Pete", text: "This is one comment"},
-  {id: 2, first_name: "Jordan", text: "This is *another* comment"}
-];
-
 var Politician = React.createClass({
   render: function() {
-    return (<div>Name: {this.props.first_name}</div>);
+    return (<div>Name: {this.props.first_name}, HonestyScore: {this.props.honesty_score}</div>);
   }
 });
 
@@ -28,7 +23,7 @@ var PoliticiansList = React.createClass({
   render: function() {
     var politicianListings = this.state.data.map(function(politician) {
         return (
-          <Politician first_name={politician.first_name} />
+          <Politician first_name={politician.first_name} honesty_score={politician.honesty_score}/>
         );
       });
     return (<div className="politiciansListing">{politicianListings}</div>);
